@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static\basic.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        
+        <a href="/" class="menu-item">Home</a>
+        <a href="/form" class="menu-item">Form</a>
+        <a href="/otherpage" class="menu-item">Other Page</a>
+    </div>
+    <form method="post">
+        Please enter your name: <input name="name" />
+        <br>
+        <button type="submit">Make a post request</button>
+    </form>
+
+    <!--  More content if name exisst -->
+    {% if name %}
+        <div class="content">
+            <p>A post request has been made</p>
+            <p>{{ name }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
