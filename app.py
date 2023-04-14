@@ -15,11 +15,11 @@ def readDetailsNoFormat(filepath):
     with open(filepath, 'r') as f:
         return [line for line in f]
 
-name, age, major, location = readDetailsOfBio("static\\info.txt")
+name, age, major, location = readDetailsOfBio("static/info.txt")
 
 @app.route("/")
 def homePage():
-    about = readDetailsNoFormat("static\\about.txt")
+    about = readDetailsNoFormat("static/about.txt")
     return render_template('base.html', name = name, location = location, aboutMe = about)
 
 @app.route("/form", methods=['GET', 'POST'])
@@ -32,7 +32,7 @@ def demoForm():
 
 @app.route("/otherpage")
 def otherPage():
-    space = readDetailsNoFormat("static\\justSpace.txt")
+    space = readDetailsNoFormat("static/justSpace.txt")
     return render_template('otherpage.html', content=space)
 
 ## When running this file directly..
